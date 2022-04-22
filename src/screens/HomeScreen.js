@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { Text, View, ScrollView, Image, Pressable, Alert } from 'react-native'
 import Searchbar from '../components/Searchbar'
 import ResultsList from '../components/ResultsList'
+
 import useResults from '../hooks/useResults'
+import logOutAlert from '../context/logOutAlert'
 
 import HomeStyles from '../styles/HomeStyles'
 
@@ -21,23 +23,6 @@ const HomeScreen = ({ navigation }) => {
         })
     }
 
-    const logOutAlert = () => {
-        return Alert.alert(
-            "Log out",
-            "Do you want to log out from the current session",
-            [
-                {
-                    text: "OK",
-                    onPress: () => { navigation.navigate('Login') }
-                },
-                {
-                    text: "Cancel",
-                    style: "cancel"
-                }
-            ]
-        );
-    }
-
     return <View style={styles.backgroundStyle}>
         <View style={styles.header}>
             <View style={styles.headerText}>
@@ -45,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.welcome}>Get your favorite food here!</Text>
             </View>
             <Pressable
-                onPress={() => logOutAlert()}
+                onPress={() => logOutAlert(navigation)}
             >
                 <Image source={require('../../assets/logout.png')} style={styles.image} />
             </Pressable>

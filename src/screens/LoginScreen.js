@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Pressable, } from 'react-native';
 import useValidation from '../hooks/useValidation';
 
@@ -12,6 +12,11 @@ const LoginScreen = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [validation, emailError, passwordError] = useValidation([])
+
+
+    useEffect(() => {
+
+    }, [])
 
 
     return (
