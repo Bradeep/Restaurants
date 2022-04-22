@@ -16,17 +16,16 @@ export const storeData = async (email, password) => {
 
 export const retrieveData = async () => {
     try {
-        const value = await AsyncStorage.multiGet(['email', 'password']).then((data) => {
-            let email = data[0][1];
-            let password = data[1][1];
-            return ([email, password])
-            //Your logic
-        })
-        console.log('Credentials:', value)
-        return value
+        const value = await AsyncStorage.multiGet(['email', 'password'])
+        let email = value[0][1];
+        //let password = value[1][1];
+        console.log('Credentials:', email)
+        if (!email)
+            return false
+        return true
     } catch (error) {
         console.log(error)
-        return error
+        return false
     }
 }
 

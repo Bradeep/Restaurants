@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Pressable, } from 'react-native';
 import useValidation from '../hooks/useValidation';
 
+import { retrieveData } from '../context/DataStorage';
+
 
 import LoginStyles from '../styles/LoginStyles';
 
@@ -15,9 +17,14 @@ const LoginScreen = (props) => {
 
 
     useEffect(() => {
+        retrieveData()
+            .then((success) => {
+                if (success === true) {
+                    props.navigation.navigate('Home')
+                }
+            })
 
     }, [])
-
 
     return (
         <View style={styles.viewOneStyle}>
