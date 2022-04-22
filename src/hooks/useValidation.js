@@ -31,8 +31,8 @@ export default () => {
         })
         if (flag === 1) {
             storeData(email, password)
-                .then((err) => {
-                    if (!err)
+                .then((success) => {
+                    if (success)
                         props.navigation.navigate('Home')
                 })
         }

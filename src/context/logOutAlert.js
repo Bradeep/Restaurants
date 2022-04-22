@@ -1,4 +1,5 @@
 import { Alert } from 'react-native'
+import { deleteData } from './DataStorage';
 
 export default (navigation) => {
     return Alert.alert(
@@ -7,7 +8,13 @@ export default (navigation) => {
         [
             {
                 text: "OK",
-                onPress: () => { navigation.navigate('Login') }
+                onPress: () => {
+                    deleteData()
+                        .then((success) => {
+                            if (success)
+                                navigation.navigate('Login')
+                        })
+                }
             },
             {
                 text: "Cancel",
@@ -16,3 +23,5 @@ export default (navigation) => {
         ]
     );
 }
+
+

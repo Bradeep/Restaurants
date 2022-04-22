@@ -7,10 +7,10 @@ export const storeData = async (email, password) => {
             ["password", password]
         ])
         console.log('Data stored:', email, password)
-        // return true
+        return true
     } catch (error) {
         console.log('error:', error)
-        return error
+        return false
     }
 }
 
@@ -27,5 +27,19 @@ export const retrieveData = async () => {
     } catch (error) {
         console.log(error)
         return error
+    }
+}
+
+export const deleteData = async () => {
+    try {
+
+        let keys = ['email', 'password'];
+        await AsyncStorage.multiRemove(keys, (err) => {
+            console.log('Local storage user info removed!');
+        });
+        return true
+    } catch (error) {
+        console.log("Error in deleting the user credentials")
+        return false
     }
 }
