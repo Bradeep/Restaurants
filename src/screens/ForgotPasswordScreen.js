@@ -4,7 +4,7 @@ import ForgotPasswordStyles from '../styles/ForgotPasswordStyles';
 
 const styles = ForgotPasswordStyles
 
-const ForgotPasswordScreen = (props) => {
+const ForgotPasswordScreen = () => {
     return (
         <View style={styles.viewOneStyle}>
             <View style={styles.credentialStyle}>
