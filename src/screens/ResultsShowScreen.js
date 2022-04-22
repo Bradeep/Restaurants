@@ -25,11 +25,6 @@ const ResultsShowScreen = ({ route: { params } }) => {
         getResult(id)
     }, [])
 
-    const arrayDisplay = (arrays) => {
-
-    }
-
-
 
     if (!result)
         return null

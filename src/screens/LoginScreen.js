@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity, TextInput, Pressable } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, Pressable, } from 'react-native';
+import useValidation from '../hooks/useValidation';
 
-import Credentials from '../JSON/Credentials';
 
 import LoginStyles from '../styles/LoginStyles';
 
@@ -11,38 +11,7 @@ const LoginScreen = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [emailError, setemailError] = useState('')
-    const [passwordError, setpasswordError] = useState('')
-
-    const verification = () => {
-        setemailError('');
-        setpasswordError('');
-        if (email === '') {
-            setemailError('Enter email id')
-            return;
-        }
-        if (password === '') {
-            setpasswordError('Enter Password')
-            return;
-        }
-
-        var flag = 0;
-        Credentials.map((credentials) => {
-            if (credentials.email === email) {
-
-                if (credentials.password === password) {
-                    flag = 1;
-                }
-            }
-        })
-        if (flag === 1)
-            props.navigation.navigate('Home')
-        else {
-            alert('Credentials are wrong')
-        }
-
-    }
-
+    const [validation, emailError, passwordError] = useValidation([])
 
 
     return (
@@ -84,7 +53,7 @@ const LoginScreen = (props) => {
             <View style={{}}>
                 <Pressable
                     style={styles.submitStyle}
-                    onPress={() => verification()}
+                    onPress={() => validation(email, password, props)}
                 >
                     <Text style={styles.submitTextStyle}>Submit</Text>
                 </Pressable>
