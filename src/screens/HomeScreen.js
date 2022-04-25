@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Text, View, ScrollView, Image, Pressable, Alert } from 'react-native'
+import React, { useState, } from 'react'
+import { Text, View, ScrollView, Image, Pressable, } from 'react-native'
 import Searchbar from '../components/Searchbar'
 import ResultsList from '../components/ResultsList'
 
@@ -23,13 +23,6 @@ const HomeScreen = ({ navigation }) => {
             return result.price === price
         })
     }
-
-    // useEffect(() => {
-    //     navigation.reset({
-    //         index: 0,
-    //         routes: [{ name: 'Home' }],
-    //     });
-    // }, [])
 
 
     return <View style={styles.backgroundStyle}>

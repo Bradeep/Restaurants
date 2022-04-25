@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Pressable, } from 'react-native';
+import SplashScreen from "react-native-splash-screen"
+
 import useValidation from '../hooks/useValidation';
 
 import { retrieveData } from '../context/DataStorage';
@@ -27,7 +29,7 @@ const LoginScreen = (props) => {
                     props.navigation.navigate('Home')
                 }
             })
-
+            .then(() => { SplashScreen.hide() })
     }, [])
 
     return (
