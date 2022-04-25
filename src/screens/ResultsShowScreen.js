@@ -8,6 +8,7 @@ const styles = ResultsShowStyles
 
 const ResultsShowScreen = ({ route: { params } }) => {
 
+    // console.log('navigation:', navigation)
     const id = params.id
     const [result, setResult] = useState(null)
 
