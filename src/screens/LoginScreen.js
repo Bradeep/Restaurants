@@ -20,6 +20,10 @@ const LoginScreen = (props) => {
         retrieveData()
             .then((success) => {
                 if (success === true) {
+                    props.navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'Home' }],
+                    });
                     props.navigation.navigate('Home')
                 }
             })

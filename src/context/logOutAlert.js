@@ -11,14 +11,20 @@ export default (navigation) => {
                 onPress: () => {
                     deleteData()
                         .then((success) => {
-                            if (success)
+                            if (success) {
+                                navigation.reset({
+                                    index: 0,
+                                    routes: [{ name: 'Login' }],
+                                });
                                 navigation.navigate('Login')
+                            }
                         })
                 }
             },
             {
                 text: "Cancel",
-                style: "cancel"
+                style: "cancel",
+                onPress: () => { }
             }
         ]
     );

@@ -32,8 +32,13 @@ export default () => {
         if (flag === 1) {
             storeData(email, password)
                 .then((success) => {
-                    if (success)
+                    if (success) {
+                        props.navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'Home' }],
+                        });
                         props.navigation.navigate('Home')
+                    }
                 })
         }
         else {
