@@ -2,13 +2,14 @@ import * as React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SplashScreen from "react-native-splash-screen"
+// import SplashScreen from "react-native-splash-screen"
 
 
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ResultsShowScreen from './src/screens/ResultsShowScreen';
+
 
 // function HomeScreen() {
 //   return (
@@ -22,14 +23,14 @@ const Stack = createNativeStackNavigator();
 
 function App() {
 
-  React.useEffect(() => {
-    SplashScreen.hide();
-  });
+  // React.useEffect(() => {
+  //   SplashScreen.hide();
+  // });
 
   return (
     <NavigationContainer >
       {/* <StatusBar backgroundColor={"white"} barStyle="dark-content" /> */}
-      <Stack.Navigator initialRouteName="Login"  >
+      <Stack.Navigator initialRouteName='Login'  >
         <Stack.Screen name="Home"
           component={HomeScreen}
           options={{
