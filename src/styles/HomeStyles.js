@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native'
+import Colors from '../util/Colors'
 
 const HomeStyles = StyleSheet.create({
     backgroundStyle: {
-        backgroundColor: 'white',
+        backgroundColor: Colors.WHITE,
         flex: 1
     },
     header: {
@@ -15,11 +16,11 @@ const HomeStyles = StyleSheet.create({
     },
     welcome: {
         fontSize: 15,
-        color: 'black'
+        color: Colors.BLACK
     },
     nameStyle: {
         fontSize: 25,
-        color: 'black'
+        color: Colors.BLACK
     },
     image: {
         height: 35,

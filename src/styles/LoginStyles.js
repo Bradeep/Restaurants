@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native'
+import Colors from '../util/Colors'
 
 const LoginStyles = StyleSheet.create({
 
     viewOneStyle: {
         flex: 1,
         marginTop: 7,
-        backgroundColor: 'white',
+        backgroundColor: Colors.WHITE,
     },
     credentialStyle: {
         marginTop: 50,
@@ -24,7 +25,7 @@ const LoginStyles = StyleSheet.create({
         marginHorizontal: 12,
         borderRadius: 10,
         fontSize: 20,
-        borderColor: 'grey'
+        borderColor: Colors.GREY
     },
     submitStyle: {
         // flexDirection: 'row',
@@ -36,13 +37,13 @@ const LoginStyles = StyleSheet.create({
         borderRadius: 15,
         width: 350,
         height: 50,
-        borderColor: '#9ACD32',
-        backgroundColor: '#9ACD32'
+        borderColor: Colors.LIGHT_GREEN,
+        backgroundColor: Colors.LIGHT_GREEN
     },
     submitTextStyle: {
         alignSelf: 'center',
         fontSize: 20,
-        color: 'black'
+        color: Colors.BLACK
     },
     forgotPasswordStyle: {
         alignSelf: 'center',
@@ -51,10 +52,10 @@ const LoginStyles = StyleSheet.create({
         margin: 10,
         fontSize: 20,
         textDecorationLine: 'underline',
-        color: 'grey'
+        color: Colors.GREY
     },
     error: {
-        color: 'red',
+        color: Colors.RED,
         marginLeft: 15
     },
 

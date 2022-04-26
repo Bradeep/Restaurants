@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TextInput, Pressable } from 'react-native';
 import ForgotPasswordStyles from '../styles/ForgotPasswordStyles';
+import Placeholders from '../util/Placeholders';
 
 const styles = ForgotPasswordStyles
 
@@ -16,6 +17,7 @@ const ForgotPasswordScreen = () => {
                     </Text>
                     <TextInput
                         style={styles.inputStyle}
+                        placeholder={Placeholders.USERNAME}
                     />
                 </View>
                 <View style={styles.inputContainerStyle}>
@@ -27,6 +29,7 @@ const ForgotPasswordScreen = () => {
                     <TextInput
                         style={styles.inputStyle}
                         secureTextEntry={true}
+                        placeholder={Placeholders.OLD_PASSWORD}
                     />
                 </View>
                 <View style={styles.inputContainerStyle}>
@@ -37,6 +40,7 @@ const ForgotPasswordScreen = () => {
                     </Text>
                     <TextInput style={styles.inputStyle}
                         secureTextEntry={true}
+                        placeholder={Placeholders.NEW_PASSWORD}
                     />
                 </View>
             </View>
