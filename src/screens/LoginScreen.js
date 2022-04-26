@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Text, View, TouchableOpacity, TextInput, Pressable, } from 'react-native';
 import SplashScreen from "react-native-splash-screen"
 
@@ -16,7 +16,7 @@ const LoginScreen = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [validation, emailError, passwordError] = useValidation([])
-
+    const passwordRef = useRef();
 
     useEffect(() => {
         retrieveData()
@@ -46,8 +46,13 @@ const LoginScreen = (props) => {
                     <TextInput
                         style={styles.inputStyle}
                         value={email}
+                        returnKeyType='next'
                         placeholder={Placeholders.EMAIL}
                         onChangeText={(email) => setEmail(email)}
+                        blurOnSubmit={false}
+                        onSubmitEditing={() => {
+                            passwordRef.current.focus();
+                        }}
                     />
                     <Text style={styles.error}>{emailError}</Text>
                 </View>
@@ -61,7 +66,9 @@ const LoginScreen = (props) => {
                             secureTextEntry={true}
                             value={password}
                             placeholder={Placeholders.PASSWORD}
+                            ref={passwordRef}
                             onChangeText={(password) => setPassword(password)}
+                            onSubmitEditing={() => validation(email, password, props)}
                         />
                     </View>
                     <Text style={styles.error}>{passwordError}</Text>
@@ -90,7 +97,6 @@ const LoginScreen = (props) => {
         </View>
     )
 }
-
 
 
 export default LoginScreen
