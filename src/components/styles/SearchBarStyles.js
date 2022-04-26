@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native'
+import Colors from '../../util/Colors'
 
 const SearchBarStyles = StyleSheet.create({
     backgroundStyle: {
         marginTop: 15,
-        backgroundColor: '#F0EEEE',
+        backgroundColor: Colors.SHADOW_GREY,
         height: 50,
         marginHorizontal: 15,
         borderRadius: 5,

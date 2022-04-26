@@ -6,7 +6,7 @@ import useValidation from '../hooks/useValidation';
 
 import { retrieveData } from '../context/DataStorage';
 
-
+import Placeholders from '../util/Placeholders';
 import LoginStyles from '../styles/LoginStyles';
 
 const styles = LoginStyles
@@ -46,7 +46,7 @@ const LoginScreen = (props) => {
                     <TextInput
                         style={styles.inputStyle}
                         value={email}
-                        placeholder='Email'
+                        placeholder={Placeholders.EMAIL}
                         onChangeText={(email) => setEmail(email)}
                     />
                     <Text style={styles.error}>{emailError}</Text>
@@ -60,7 +60,7 @@ const LoginScreen = (props) => {
                             style={styles.inputStyle}
                             secureTextEntry={true}
                             value={password}
-                            placeholder='Password'
+                            placeholder={Placeholders.PASSWORD}
                             onChangeText={(password) => setPassword(password)}
                         />
                     </View>

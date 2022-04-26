@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import Colors from '../util/Colors'
 
 const ResultsShowStyles = StyleSheet.create({
     image: {
@@ -13,7 +14,7 @@ const ResultsShowStyles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         marginLeft: 10,
-        color: 'black'
+        color: Colors.BLACK
     },
     container: {
         // flex: 1,
@@ -29,7 +30,7 @@ const ResultsShowStyles = StyleSheet.create({
         margin: 5,
         //flex: 1,
         alignSelf: 'stretch',
-        color: 'black'
+        color: Colors.BLACK
     },
     detailStyle: {
         flexDirection: 'row',
@@ -42,7 +43,7 @@ const ResultsShowStyles = StyleSheet.create({
     },
     ratingText: {
         fontSize: 17,
-        color: 'black'
+        color: Colors.BLACK
     },
     arrayStyle: {
         flex: 1
@@ -50,7 +51,7 @@ const ResultsShowStyles = StyleSheet.create({
     descriptionStyle: {
         fontSize: 20,
         margin: 10,
-        color: 'grey',
+        color: Colors.GREY,
 
     }
 })

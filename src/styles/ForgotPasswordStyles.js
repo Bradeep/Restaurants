@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native'
+import Colors from '../util/Colors'
 
 const ForgotPasswordStyles = StyleSheet.create({
     viewOneStyle: {
         flex: 1,
         marginTop: 7,
-        backgroundColor: 'white',
+        backgroundColor: Colors.WHITE,
     },
     textStyle: {
-        color: 'black',
+        color: Colors.BLACK,
         left: 10,
         fontSize: 18,
     },
@@ -22,7 +23,7 @@ const ForgotPasswordStyles = StyleSheet.create({
         margin: 10,
         borderRadius: 10,
         fontSize: 20,
-        borderColor: 'grey',
+        borderColor: Colors.GREY,
         // padding: 5
     },
     submitStyle: {
@@ -35,13 +36,13 @@ const ForgotPasswordStyles = StyleSheet.create({
         borderRadius: 15,
         width: 350,
         height: 50,
-        borderColor: '#9ACD32',
-        backgroundColor: '#9ACD32'
+        borderColor: Colors.LIGHT_GREEN,
+        backgroundColor: Colors.LIGHT_GREEN
     },
     submitTextStyle: {
         alignSelf: 'center',
         fontSize: 20,
-        color: 'black'
+        color: Colors.BLACK
     },
 })
 
