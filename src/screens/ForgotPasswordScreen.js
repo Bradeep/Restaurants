@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Text, View, TextInput, Pressable } from 'react-native';
 import ForgotPasswordStyles from '../styles/ForgotPasswordStyles';
 import Placeholders from '../util/Placeholders';
@@ -6,6 +6,10 @@ import Placeholders from '../util/Placeholders';
 const styles = ForgotPasswordStyles
 
 const ForgotPasswordScreen = () => {
+
+    const oldPasswordRef = useRef();
+    const newPasswordRef = useRef();
+
     return (
         <View style={styles.viewOneStyle}>
             <View style={styles.credentialStyle}>
@@ -18,6 +22,11 @@ const ForgotPasswordScreen = () => {
                     <TextInput
                         style={styles.inputStyle}
                         placeholder={Placeholders.USERNAME}
+                        returnKeyType='next'
+                        blurOnSubmit={false}
+                        onSubmitEditing={() => {
+                            oldPasswordRef.current.focus();
+                        }}
                     />
                 </View>
                 <View style={styles.inputContainerStyle}>
@@ -30,6 +39,12 @@ const ForgotPasswordScreen = () => {
                         style={styles.inputStyle}
                         secureTextEntry={true}
                         placeholder={Placeholders.OLD_PASSWORD}
+                        returnKeyType='next'
+                        blurOnSubmit={false}
+                        ref={oldPasswordRef}
+                        onSubmitEditing={() => {
+                            newPasswordRef.current.focus();
+                        }}
                     />
                 </View>
                 <View style={styles.inputContainerStyle}>
@@ -41,6 +56,7 @@ const ForgotPasswordScreen = () => {
                     <TextInput style={styles.inputStyle}
                         secureTextEntry={true}
                         placeholder={Placeholders.NEW_PASSWORD}
+                        ref={newPasswordRef}
                     />
                 </View>
             </View>
