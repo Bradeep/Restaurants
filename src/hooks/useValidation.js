@@ -1,4 +1,4 @@
-import { storeData } from '../context/DataStorage';
+import { storeData } from '../functions/DataStorage';
 import Credentials from '../JSON/Credentials';
 import { useState } from 'react'
 
