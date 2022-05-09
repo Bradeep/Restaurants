@@ -53,6 +53,11 @@ const ResultsShowStyles = StyleSheet.create({
         margin: 10,
         color: Colors.GREY,
 
+    },
+    loader: {
+        paddingTop: 150,
+        backgroundColor: Colors.WHITE,
+        flex: 1
     }
 })
 

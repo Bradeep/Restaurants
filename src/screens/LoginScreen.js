@@ -4,7 +4,7 @@ import SplashScreen from "react-native-splash-screen"
 
 import useValidation from '../hooks/useValidation';
 
-import { retrieveData } from '../context/DataStorage';
+import { retrieveData } from '../functions/DataStorage';
 
 import Placeholders from '../util/Placeholders';
 import LoginStyles from '../styles/LoginStyles';

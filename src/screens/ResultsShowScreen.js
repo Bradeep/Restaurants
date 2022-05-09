@@ -3,6 +3,8 @@ import { Text, View, Image, FlatList, ScrollView } from 'react-native'
 import yelp from '../api/yelp'
 
 import ResultsShowStyles from '../styles/ResultsShowStyles'
+import Loader from '../components/Loader'
+
 
 const styles = ResultsShowStyles
 
@@ -26,8 +28,13 @@ const ResultsShowScreen = ({ route: { params } }) => {
     }, [])
 
 
-    if (!result)
-        return null
+    if (!result) {
+        return <View style={styles.loader} >
+            <Loader />
+        </View>
+
+    }
+
 
     return (
         <>

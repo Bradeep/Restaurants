@@ -4,9 +4,10 @@ import Searchbar from '../components/Searchbar'
 import ResultsList from '../components/ResultsList'
 
 import useResults from '../hooks/useResults'
-import logOutAlert from '../context/logOutAlert'
+import logOutAlert from '../functions/logOutAlert'
 
 import HomeStyles from '../styles/HomeStyles'
+import Loader from '../components/Loader'
 
 
 const styles = HomeStyles
@@ -14,7 +15,7 @@ const styles = HomeStyles
 const HomeScreen = ({ navigation }) => {
 
     const [search, setSearch] = useState('');
-    const [searchApi, results, errorMessage] = useResults();
+    const [searchApi, results, errorMessage, loader] = useResults();
 
     // //console.log(results)
 
@@ -43,9 +44,14 @@ const HomeScreen = ({ navigation }) => {
         <Searchbar
             search={search}
             onSearchChange={(newTerm) => setSearch(newTerm)}
-            onTextSubmit={() => searchApi(search)}
+            onTextSubmit={() => {
+                searchApi(search)
+            }}
         />
         {errorMessage ? <Text>{errorMessage}</Text> : null}
+        {loader ? <View>
+            <Loader />
+        </View> : null}
         <ScrollView>
             <ResultsList results={filterByPrice('$')} title='Cost Effective' navigation={navigation} />
             <ResultsList results={filterByPrice('$$')} title='Bit Pricier' navigation={navigation} />
