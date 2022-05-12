@@ -24,12 +24,13 @@ const LoginScreen = (props) => {
                 if (success === true) {
                     props.navigation.reset({
                         index: 0,
-                        routes: [{ name: 'Home' }],
+                        routes: [{ name: 'Tab' }],
                     });
-                    props.navigation.navigate('Home')
+                    props.navigation.navigate('Tab')
                 }
             })
-            .then(() => { SplashScreen.hide() })
+            .then(() => { setTimeout(SplashScreen.hide, 1000) })
+        // .then(() => { SplashScreen.hide() })
     }, [])
 
     return (

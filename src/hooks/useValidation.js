@@ -35,9 +35,9 @@ export default () => {
                     if (success) {
                         props.navigation.reset({
                             index: 0,
-                            routes: [{ name: 'Home' }],
+                            routes: [{ name: 'Tab' }],
                         });
-                        props.navigation.navigate('Home')
+                        props.navigation.navigate('Tab')
                     }
                 })
         }
