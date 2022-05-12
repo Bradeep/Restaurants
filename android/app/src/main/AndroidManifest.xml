@@ -2,6 +2,8 @@
   package="com.restaurant">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- The below line is to give access to app to check for network connectivity -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
       android:name=".MainApplication"
