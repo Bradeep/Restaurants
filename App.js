@@ -7,11 +7,9 @@ import { checkInternetConnection } from 'react-native-offline'
 import FlashMessage, { showMessage } from 'react-native-flash-message'
 
 
-import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
-import ResultsShowScreen from './src/screens/ResultsShowScreen';
-
+import TabNavigation from './src/navigation/TabNavigation';
 
 // function HomeScreen() {
 //   return (
@@ -36,7 +34,6 @@ function App() {
     const syncInterval = setInterval(() => {
       checkInternetConnection()
         .then((isConnected) => {
-          //console.log('connection:', isConnected)
           setConnection(isConnected)
         })
         .catch((e) => console.log(`error getting status : ${e}`))
@@ -71,26 +68,15 @@ function App() {
   return (
     <NavigationContainer >
       {/* <StatusBar backgroundColor={"white"} barStyle="dark-content" /> */}
-      <Stack.Navigator initialRouteName='Login'  >
-        <Stack.Screen name="Home"
-          component={HomeScreen}
-          options={{
-            title: "Restaurants",
-            headerTitleStyle: {
-              fontWeight: 'bold',
-              fontSize: 22
-            },
-            headerBackVisible: false
-          }}
-        />
+      <Stack.Navigator
+        initialRouteName='Login'
+        screenOptions={{
+          headerShown: false
+        }}
+      >
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Tab" component={TabNavigation} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-        <Stack.Screen name="ResultsShow"
-          component={ResultsShowScreen}
-          options={{
-            title: "Restaurant Details",
-          }}
-        />
       </Stack.Navigator>
       <FlashMessage ref={flash} position={'top'} />
     </NavigationContainer>
